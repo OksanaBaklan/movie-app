@@ -1,3 +1,5 @@
+/** @format */
+
 import { useNavigate } from "react-router-dom";
 import useSWR from "swr";
 import { API, fetcher } from "../../config";
@@ -8,7 +10,7 @@ import { useAuth } from "../../context/auth-context";
 import { useFavorite } from "../../hooks/useFavorite";
 import Heart from "../../utils/removeFavorite";
 export default function BannerItem({ item, mediaType }) {
-  const {userInfo} = useAuth();
+  const { userInfo } = useAuth();
   const isFavorite = useFavorite(item?.id);
 
   const navigate = useNavigate();
@@ -42,12 +44,11 @@ export default function BannerItem({ item, mediaType }) {
 
         <div className="inline-flex gap-5">
           <Button onClick={() => navigate(`/movie/${id}`)} className="w-auto">
-            Watch Now
+            Go To movie details
           </Button>
           {isFavorite ? (
             <div className="flex items-center justify-center w-8 h-8 m-auto rounded-full bg-primary">
-
-            <Heart id={id} mediaType={mediaType}></Heart>
+              <Heart id={id} mediaType={mediaType}></Heart>
             </div>
           ) : (
             <Button

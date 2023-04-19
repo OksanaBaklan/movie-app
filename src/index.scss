@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-blend-lighten font-body text-black;
+  }
+}
+.main {
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    @apply bg-primary
+  }
+}
+@layer components {
+  .page-container {
+    width: 100%;
+    padding: 0 50px;
+    @media screen and(max-width:620px) {
+      padding: 0 20px;
+    }
+  }
+  .section-title {
+    @apply capitalize text-white mb-6 text-2xl xs:text-3xl font-bold hover:text-primary duration-200;
+    &-primary {
+      @apply capitalize  mb-6 text-2xl xs:text-3xl font-bold text-primary;
+    }
+  }
+  .page-container-fluid {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .movie-list .swiper-slide {
+    height: auto;
+  }
+  .banner .swiper {
+    height: 100%;
+  }
+  .banner--flex-style {
+    @apply top-0 left-0 items-center h-full w-full px-8 absolute flex-row max-h-full;
+  }
+  .sidebar {
+    transition: 0.3s linear !important;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+    }
+  }
+  .input__error {
+    @apply text-xs text-red-500 text-left;
+  }
+}
+
+@import "./assets/scss/loading";
+
+@import "./assets/scss/pagination";
+
+@import "./assets/scss/sidebar";
+
+@import "./assets/scss/fb";
+
+@import "./assets/scss/toast";

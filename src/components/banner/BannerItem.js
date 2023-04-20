@@ -9,21 +9,32 @@ import { updateFavorite } from "../../utils/updateFavorite";
 import { useAuth } from "../../context/auth-context";
 import { useFavorite } from "../../hooks/useFavorite";
 import Heart from "../../utils/removeFavorite";
+
 export default function BannerItem({ item, mediaType }) {
   const { userInfo } = useAuth();
   const isFavorite = useFavorite(item?.id);
 
   const navigate = useNavigate();
-  const { poster_path, title, id } = item;
+  const { poster_path, backdrop_path, title, id } = item;
   const { data, error } = useSWR(API.getMovieDetail(id), fetcher);
   if (error) return <div>failed to load</div>;
   if (!data) return <Loading></Loading>;
   const { genres } = data;
   return (
     <div className="relative w-full h-full overflow-hidden rounded-lg">
-      <div className="overlay absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.6)] to-[rgba(0,0,0,0.6)] rounded-lg "></div>
-      <img
-        className="object-contain w-full h-full rounded-lg"
+ 
+      {/* <div className="absolute inset-0 hidden bg-white md:block bg-opacity-90"></div>
+      <div className="overlay absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.2)] to-[rgba(0,0,0,0.6)] rounded-lg "></div> */}
+
+      <div
+        className="hidden w-full h-full bg-no-repeat bg-cover md:block"
+        style={{
+          backgroundImage: `url(${API.getImageUrl(backdrop_path)}), 
+          linear-gradient(#e66465, #9198e5)`,
+        }}
+      ></div>
+     <img
+        className="object-contain w-full h-full rounded-lg overlay absolute"
         src={API.getImageUrl(poster_path, "w500")}
         alt=""
       />

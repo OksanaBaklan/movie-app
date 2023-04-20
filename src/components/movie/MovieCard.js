@@ -26,7 +26,7 @@ const MovieCard = ({ movieid, item = "", mediaType }) => {
   const isFavorite = useFavorite(id);
   return (
     result && (
-      <div className="flex flex-col h-full p-3 text-white rounded-lg select-none movie-card bg-slate-400">
+      <div className="flex flex-col h-full p- text-white rounded-lg select-none movie-card bg-slate-400">
         <div className="relative">
           {isFavorite ? (
             <div className="absolute flex items-center justify-center w-8 h-8 rounded-full cursor-pointer bg-primary top-3 right-3">

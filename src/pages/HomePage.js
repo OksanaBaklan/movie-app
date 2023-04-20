@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <>
       <Banner></Banner>
-      <section className="movies-layout page-container pb-20">
+      <section className="movies-layout page-container pb-10">
         <NavLink to="/discover">
           <h2 className="section-title text-black">Discover</h2>
         </NavLink>

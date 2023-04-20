@@ -2,11 +2,10 @@
 
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import CommingSoon from "./components/CommingSoon";
-import Loading from "./components/Loading";
+import ComingSoon from "./components/ComingSoon";
 import "swiper/scss";
 import ScrollToTop from "./components/ScrollToTop";
-import { AuthProvider, useAuth } from "./context/auth-context";
+import { AuthProvider } from "./context/auth-context";
 import LayoutAuthen from "./components/layout/LayoutAuthen";
 //Default
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -40,7 +39,7 @@ function App() {
                 element={<MovieDetailPage></MovieDetailPage>}
               ></Route>
               <Route path="/user" element={<UserPage />}></Route>
-              <Route path="*" element={<CommingSoon></CommingSoon>}></Route>
+              <Route path="*" element={<ComingSoon></ComingSoon>}></Route>
             </Route>
             <Route element={<LayoutAuthen />}>
               <Route

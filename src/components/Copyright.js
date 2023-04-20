@@ -5,7 +5,7 @@ import { BsSuitHeart } from "react-icons/bs";
 const Copyright = () => {
   return (
     <p className="flex items-center justify-center py-10">
-      Made by
+      Made by --
       <a
         href="https://github.com/OksanaBaklan"
         target="_blank"
@@ -14,7 +14,7 @@ const Copyright = () => {
       >
         Oksana Bakl
       </a>
-      with <BsSuitHeart className="mx-1 text-primary"></BsSuitHeart>
+      -- 2023
     </p>
   );
 };

@@ -51,6 +51,7 @@ function App() {
                 element={<SignInPage></SignInPage>}
               ></Route>
             </Route>
+            <Route path="*" element={<ComingSoon></ComingSoon>}></Route>
           </Routes>
         </ScrollToTop>
       </Suspense>

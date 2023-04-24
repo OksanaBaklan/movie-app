@@ -8,7 +8,6 @@ import Loading from "../components/Loading";
 import { MovieSimilar } from "../components/movie/MovieData/MovieSimilar";
 import { MovieCredit } from "../components/movie/MovieData/MovieCredit";
 import { MovieVideo } from "../components/movie/MovieData/MovieVideo";
-import CommentsFb from "../components/Facebook";
 
 function MovieDetailPage() {
   const { movieId } = useParams();
@@ -95,8 +94,6 @@ function MovieDetailPage() {
       </div>
       <MovieCredit mediaType={mediaType}></MovieCredit>
       <MovieVideo mediaType={mediaType}></MovieVideo>
-      {/* <MovieSimilar mediaType={mediaType}></MovieSimilar> */}
-      {/* <CommentsFb url={url}></CommentsFb> */}
     </div>
   );
 }

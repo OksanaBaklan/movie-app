@@ -1,11 +1,13 @@
+/** @format */
+
 export const fetcher = (url) => fetch(url).then((res) => res.json());
 export const REACT_APP_URL = "https://tl-movie.vercel.app";
-export const REACT_APP_FACEBOOK_APP_ID = '3108322012762887'
-const apiKey = "1a763884400befdbd957d043e8e9e19c";
+const apiKey = "3d673b2d8e40eafc68577fae5a6a1f4b";
 const API_domain = `https://api.themoviedb.org/3`;
 
 export const API = {
-  getMoviebyID: (id, mediaType) => `${API_domain}/${mediaType}/${id}?api_key=${apiKey}`,
+  getMoviebyID: (id, mediaType) =>
+    `${API_domain}/${mediaType}/${id}?api_key=${apiKey}`,
   getMovieSearch: (query) =>
     `${API_domain}/search/movie?api_key=${apiKey}&query=${query}`,
   getMovieList: (type, page = 1, mediaType = "all") => {
